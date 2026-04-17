@@ -1,0 +1,25 @@
+<div style="padding: 20px;">
+  <h2>Mis Metas de Vida (LifeGoals)</h2>
+
+  <!-- Add -->
+  <div style="margin-bottom: 20px;">
+    <!-- ngModel -->
+    <input 
+      type="text" 
+      [(ngModel)]="nuevaMetaText" 
+      placeholder="Escribe una nueva meta..." 
+      style="padding: 5px; width: 300px;">
+    <button (click)="agregarMeta()" style="padding: 5px 10px; margin-left: 10px;">Agregar Meta</button>
+  </div>
+
+  <!-- Read & Delete-->
+  <ul style="list-style-type: none; padding: 0;">
+    <!-- *ngFor para la coeccion -->
+    <li *ngFor="let m of metas" style="margin-bottom: 10px; padding: 10px; border: 1px solid #ccc;">
+      <strong>Meta:</strong> {{ m.meta }} 
+      <button (click)="eliminarMeta(m.id)" style="margin-left: 15px; color: white; background-color: red; border: none; padding: 5px; cursor: pointer;">
+        Eliminar
+      </button>
+    </li>
+  </ul>
+</div>
